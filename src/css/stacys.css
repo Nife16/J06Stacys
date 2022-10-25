@@ -1,0 +1,40 @@
+.flex-col {
+    flex-direction: column;
+}
+
+.flex-row {
+    flex-direction: row;
+}
+
+.full-height {
+    height: 100%;
+}
+
+.full-width {
+    width: 100%;
+}
+
+.half-width {
+    width: 50%;
+}
+
+.third-width {
+    width: 33%;
+}
+
+.quarter-width {
+    width: 25%;
+}
+
+.margin-vert {
+    margin: auto 0;
+}
+
+.margin-horiz {
+    margin: 0 auto;
+}
+
+.page-container {
+    height: 100%;
+    width: 100%;
+}
