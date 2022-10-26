@@ -1,10 +1,9 @@
-import '../../css/components/home.css'
 
-const Home = () => {
+
+const Header = () => {
 
     return (
-        <div className='flex-col page-container'>
-            <div className='flex-row header'>
+        <div className='flex-row header'>
                 <div className='flex-col third-width'>
                     <img className="logo" src="https://thumbs.dreamstime.com/b/house-abstract-home-construction-architecture-real-estate-realty-logo-design-vector-concept-illustrations-156766848.jpg" />
                 </div>
@@ -31,9 +30,8 @@ const Home = () => {
 
                 </div>
             </div>
-        </div>
     )
 
 }
 
-export default Home
+export default Header

@@ -26,6 +26,10 @@
     width: 25%;
 }
 
+.margin-center {
+    margin: auto;
+}
+
 .margin-vert {
     margin: auto 0;
 }
@@ -35,6 +39,11 @@
 }
 
 .page-container {
+    height: 100%;
+    width: 100%;
+}
+
+.container {
     height: 100%;
     width: 100%;
 }

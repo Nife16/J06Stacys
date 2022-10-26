@@ -1,5 +1,25 @@
-
 .header {
     height: 100px;
     background-color: moccasin;
+}
+
+.header-button {
+    height: 100%;
+    margin: 0 auto;
+    background-color: moccasin;
+    font-weight: 900;
+}
+
+.header-button:hover {
+    background-color: tan;    
+}
+
+.header-link {
+    text-decoration: none;
+    color: black;
+}
+
+.logo {
+    height: 100px;
+    width: 100px;
 }
