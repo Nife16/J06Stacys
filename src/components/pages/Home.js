@@ -1,36 +1,47 @@
+import axios from 'axios'
+import { useEffect, useState } from 'react'
 import '../../css/components/home.css'
+import Header from '../reusuables/Header'
 
 const Home = () => {
 
+    const [user, setUser] = useState({})
+    const [isLoading, setIsLoading] = useState(true)
+    useEffect(() => {
+        const email = localStorage.getItem("email")
+        if(email !== null || email !== undefined) {
+
+
+            axios.get(`http://localhost:8080/customer/findCustomerByEmail/${email}`)
+            .then((response) => {
+
+                setUser(response.data)
+                setIsLoading(false)
+
+            }).catch((error)=> {
+                console.log(error)
+                setIsLoading(false)
+            })
+        }
+    }, [])
+
+    const renderContent = () => {
+
+        if(isLoading) {
+            // render a loading spinner
+            return (
+                <div class="loader"></div>
+            )
+        } else {
+            return (<div>Hi {user.firstName}</div>)
+        }
+        
+    }
+
     return (
         <div className='flex-col page-container'>
-            <div className='flex-row header'>
-                <div className='flex-col third-width'>
-                    <img className="logo" src="https://thumbs.dreamstime.com/b/house-abstract-home-construction-architecture-real-estate-realty-logo-design-vector-concept-illustrations-156766848.jpg" />
-                </div>
-                <div className='flex-col third-width'>
-                    <div className='flex-row full-height'>
-                        <a href="/sign-up" className='container header-link'>
-                            <div className='header-button'>
-                                <p className='margin-center'>Sign Up</p>
-                            </div>
-                        </a>
-                        <a href="/sign-up" className='container header-link'>
-                            <div className='header-button'>
-                                <p className='margin-center'>Sign In</p>
-                            </div>
-                        </a>
-                        <a href="/sign-up" className='container header-link'>
-                            <div className='header-button'>
-                                <p className='margin-center'>View Stuff</p>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-                <div className='flex-col third-width'>
-
-                </div>
-            </div>
+            <Header />
+            {renderContent()}
         </div>
     )
 
