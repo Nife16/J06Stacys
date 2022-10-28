@@ -2,8 +2,9 @@ import axios from 'axios'
 import { useEffect, useState } from 'react'
 import '../../css/components/home.css'
 import Header from '../reusuables/Header'
+import LoadingSpinner from '../reusuables/LoadingSpinner'
 
-const Home = () => {
+const Home = (props) => {
 
     const [user, setUser] = useState({})
     const [isLoading, setIsLoading] = useState(true)
@@ -28,9 +29,9 @@ const Home = () => {
     const renderContent = () => {
 
         if(isLoading) {
-            // render a loading spinner
+            // render a loading spinnerzZ
             return (
-                <div class="loader"></div>
+                <LoadingSpinner />
             )
         } else {
             return (<div>Hi {user.firstName}</div>)
@@ -40,7 +41,6 @@ const Home = () => {
 
     return (
         <div className='flex-col page-container'>
-            <Header />
             {renderContent()}
         </div>
     )

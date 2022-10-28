@@ -28,21 +28,19 @@ const SignUp = () => {
     const submitHandler = () => {
 
         axios.post("http://localhost:8080/customer/signUp", user)
-        .then((response) => {
-            navigator('/sign-in')
-        })
-        .catch((error) => {
-            console.log(error)
-            // do whatever on a failed response
-        })
+            .then((response) => {
+                navigator('/sign-in')
+            })
+            .catch((error) => {
+                console.log(error)
+                // do whatever on a failed response
+            })
 
     }
 
     return (
-        <div className='flex-col page-container'>
-            <Header />
-            <div className='flex-row'>
-                <div className='sign-up-box'>
+        <div className='flex-row'>
+            <div className='sign-up-box'>
                 <label>Name</label>
                 <input className="" name="firstName" value={user.firstName} type="text" placeholder="Name" onChange={userChangeHandler} />
                 <label>Email</label>
@@ -50,7 +48,6 @@ const SignUp = () => {
                 <label>Password</label>
                 <input className="" name="password" value={user.password} type="password" placeholder="*****" onChange={userChangeHandler} />
                 <button className="" onClick={submitHandler}>Submit</button>
-                </div>
             </div>
         </div>
     )
